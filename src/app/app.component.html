@@ -1,0 +1,23 @@
+<h1>Model Forms</h1>
+<h3>Value variable</h3>
+<mat-form-field>
+  <mat-select name="countryVaraible" [(ngModel)]="selectedCountry" (ngModelChange)="test()" placeholder="Country">
+    <mat-option *ngFor="let country of countries" [value]="country.full">
+      {{country.full}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+&nbsp;&nbsp;
+Selected = {{selectedCountry}}
+
+<h1>Reactive Forms</h1>
+<h3>Value variable</h3>
+<mat-form-field>
+  <mat-select [formControl]="selectedCountryControl" placeholder="Country">
+    <mat-option *ngFor="let country of countries" [value]="country.full">
+      {{country.full}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+&nbsp;&nbsp;
+Selected = {{selectedCountryControl.value}}
